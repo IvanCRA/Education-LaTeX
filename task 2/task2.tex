@@ -1,0 +1,57 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{amsmath}
+\usepackage{adjustbox}  % Для обрезки и трансформаций изображений
+\usepackage{multirow}   % Для объединения строк в таблице
+\usepackage{booktabs}
+\usepackage[left = 3cm, right = 3cm, top = 3cm, bottom = 3cm]{geometry}
+
+\title{Выполнение задания №2}
+\author{Ivan Pertrischev}
+\date{March 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Практика, Вариант 9}
+\section{Математический анализ}
+
+\section*{Задание 1: Вставка диаграммы}
+\begin{center}
+    \includegraphics[width=10cm,height=6cm,trim=0cm 2cm 0cm 0cm,clip,angle=12]{chart.jpg}
+\end{center}
+
+\section*{Задание 2: Таблица с объединением строк}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccc}
+        \hline
+        \multirow{2}{*}{\textbf{Центр}} & \textbf{Колонка 2} & \textbf{Колонка 3} \\
+        \cline{2-3}
+        & Ещё & Данные \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section*{Задание 3: Плавающая таблица}
+\begin{table}[b]
+    \centering
+    \resizebox{0.7\textwidth}{!}{ % Обрезка ширины таблицы
+    \begin{tabular}{c c c}
+        \toprule
+        A & B & C \\
+        \midrule
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \vspace{5pt} 
+    \footnotesize Примечание: Здесь можно написать пояснение к таблице.
+\end{table}
+
+\end{document}
