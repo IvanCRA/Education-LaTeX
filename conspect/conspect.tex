@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{indentfirst}
+
+\title{Конспект: Микроконтроллеры AVR}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Структура AVR}
+Микроконтроллеры AVR имеют гарвардскую архитектуру с раздельными шинами для команд и данных. Основные компоненты:
+\begin{itemize}
+    \item 8-битное RISC-ядро
+    \item Флэш-память программ
+    \item ОЗУ (SRAM) для данных
+    \item Энергонезависимая EEPROM
+    \item Периферийные устройства (таймеры, АЦП, USART и др.)
+\end{itemize}
+
+\section{Память}
+\subsection{Организация памяти}
+\begin{itemize}
+    \item \textbf{Память программ (Flash)} - до 256 КБ, 16-битные ячейки
+    \item \textbf{ОЗУ (SRAM)} - до 16 КБ, 8-битные ячейки
+    \item \textbf{EEPROM} - до 4 КБ, 8-битные ячейки, 100 000 циклов записи
+\end{itemize}
+
+\subsection{Регистры}
+\begin{itemize}
+    \item 32 \textbf{регистра общего назначения} (R0-R31)
+    \item \textbf{Регистр статуса} (SREG) - флаги процессора
+    \item \textbf{Указатель стека} (SP) - 16-битный
+    \item \textbf{Регистры ввода/вывода} (I/O Registers)
+\end{itemize}
+
+\section{Система команд}
+Типы инструкций:
+\begin{itemize}
+    \item Арифметические и логические (ADD, SUB, AND, OR, INC, DEC)
+    \item Операции с битами (SET, CLR, SBI, CBI)
+    \item Переходы и вызовы (RJMP, IJMP, CALL, RET)
+    \item Перемещение данных (MOV, LDS, STS, LDI)
+    \item Управление (NOP, SLEEP, WDR)
+\end{itemize}
+
+Большинство инструкций выполняется за 1 такт.
+
+\section{Способы адресации}
+\begin{enumerate}
+    \item \textbf{Прямая} - операнд в регистре (ADD R1, R2)
+    \item \textbf{Непосредственная} - операнд в инструкции (LDI R16, 0xFF)
+    \item \textbf{Косвенная} - через указатель (LD R1, X+)
+    \item \textbf{Относительная} - для переходов (RJMP label)
+    \item \textbf{Прямая адресация данных} - (LDS R16, 0x100)
+    \item \textbf{Адресация ввода/вывода} - (IN R16, PORTB)
+\end{enumerate}
+
+\section{Прерывания}
+\subsection{Типы прерываний}
+\begin{itemize}
+    \item Внешние (INT0, INT1)
+    \item От таймеров
+    \item От USART
+    \\item От АЦП
+    \item Аппаратный сброс
+\end{itemize}
+
+\subsection{Обработка прерываний}
+\begin{enumerate}
+    \item Завершение текущей инструкции
+    \item Сохранение PC в стеке
+    \item Сброс флага прерывания
+    \item Переход по вектору прерывания
+    \item Выполнение обработчика
+    \item Восстановление PC (RETI)
+\end{enumerate}
+
+Вектора прерываний расположены в начале Flash-памяти.
+
+\end{document}
