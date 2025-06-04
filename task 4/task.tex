@@ -1,13 +1,13 @@
 \documentclass{beamer}
-\usetheme{Madrid} % можно поменять на Warsaw, CambridgeUS, и т.п.
-\usecolortheme{beaver} % цветовая схема
+\usetheme{Madrid}
+\usecolortheme{beaver}
 \usefonttheme{default}
 
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{graphicx}
 \usepackage{listings}
-\usepackage{booktabs} % для таблиц
+\usepackage{booktabs}
 
 \title{Пример презентации}
 \author{Вано}
@@ -16,12 +16,10 @@
 
 \begin{document}
 
-% Титульный слайд
 \begin{frame}
   \titlepage
 \end{frame}
 
-% Списки
 \begin{frame}{Списки}
 \begin{itemize}
   \item Первый пункт
@@ -32,7 +30,6 @@
 \end{itemize}
 \end{frame}
 
-% Таблица
 \begin{frame}{Таблица}
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -44,14 +41,12 @@ B        & 200      \\
 \end{tabular}
 \end{frame}
 
-% Картинка
 \begin{frame}{Картинка}
 \begin{center}
   \includegraphics[width=0.6\textwidth]{image.png}
 \end{center}
 \end{frame}
 
-% Исходный код
 \begin{frame}[fragile]{Исходный код на C++}
 \begin{lstlisting}[language=C++]
 #include <iostream>
@@ -62,21 +57,40 @@ int main() {
 \end{lstlisting}
 \end{frame}
 
-% Блок с рамкой
 \begin{frame}{Важный блок}
 \begin{block}{Важно!}
 Это важная информация, выделенная рамкой.
 \end{block}
 \end{frame}
 
-% Заметка (цитата)
 \begin{frame}{Заметка}
 \begin{quote}
 Это блок заметки. Здесь можно писать пояснения или интересные факты.
 \end{quote}
 \end{frame}
 
-% Финал
+% Ручная библиография
+\begin{frame}[allowframebreaks]{Библиография}
+\begin{thebibliography}{9}
+
+\bibitem{esp32doc}
+Espressif Systems,  
+\textit{ESP32 Technical Reference Manual},  
+2022. URL: \texttt{https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf}
+
+\bibitem{githubbojan}
+Bojan Jurca,  
+\textit{ESP32 Web Oscilloscope (GitHub Project)},  
+2021. URL: \texttt{https://github.com/BojanJurca/esp32_oscilloscope}
+
+\bibitem{circuitdigest}
+Circuit Digest,  
+\textit{ESP32 Based Oscilloscope using TFT Display},  
+URL: \texttt{https://circuitdigest.com/microcontroller-projects/esp32-based-oscilloscope}
+
+\end{thebibliography}
+\end{frame}
+
 \begin{frame}{Спасибо!}
 Спасибо за внимание!
 \end{frame}
