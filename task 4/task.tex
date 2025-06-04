@@ -1,0 +1,84 @@
+\documentclass{beamer}
+\usetheme{Madrid} % можно поменять на Warsaw, CambridgeUS, и т.п.
+\usecolortheme{beaver} % цветовая схема
+\usefonttheme{default}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{booktabs} % для таблиц
+
+\title{Пример презентации}
+\author{Вано}
+\institute{Университет Технологий}
+\date{Июнь 2025}
+
+\begin{document}
+
+% Титульный слайд
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Списки
+\begin{frame}{Списки}
+\begin{itemize}
+  \item Первый пункт
+  \item Второй пункт
+  \begin{itemize}
+    \item Подпункт
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+% Таблица
+\begin{frame}{Таблица}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Название & Значение \\
+\midrule
+A        & 100      \\
+B        & 200      \\
+\bottomrule
+\end{tabular}
+\end{frame}
+
+% Картинка
+\begin{frame}{Картинка}
+\begin{center}
+  \includegraphics[width=0.6\textwidth]{image.png}
+\end{center}
+\end{frame}
+
+% Исходный код
+\begin{frame}[fragile]{Исходный код на C++}
+\begin{lstlisting}[language=C++]
+#include <iostream>
+int main() {
+    std::cout << "Hello world!";
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+% Блок с рамкой
+\begin{frame}{Важный блок}
+\begin{block}{Важно!}
+Это важная информация, выделенная рамкой.
+\end{block}
+\end{frame}
+
+% Заметка (цитата)
+\begin{frame}{Заметка}
+\begin{quote}
+Это блок заметки. Здесь можно писать пояснения или интересные факты.
+\end{quote}
+\end{frame}
+
+% Финал
+\begin{frame}{Спасибо!}
+Спасибо за внимание!
+\end{frame}
+
+\end{document}
